@@ -236,7 +236,7 @@ To complete Lab 01: You must have access to a docker client, either on localhost
 
 * If you are using play-with-docker, look for the 8080 link near the top of the page, or if you run a Docker client with access to a local browser
 
-* Let's Run a Azure SQL Edge Server
+## Let's Run a Azure SQL Edge Server
 
     ## Prerequisites to deploy Azure SQL Edge Container
 
@@ -329,7 +329,7 @@ To complete Lab 01: You must have access to a docker client, either on localhost
 
 ## Connect from outside the container
 
-* Using the example from [[Connect from outside the container](https://docs.microsoft.com/en-us/azure/azure-sql-edge/disconnected-deployment#connect-from-outside-the-container)
+* Using the example from [Connect from outside the container](https://docs.microsoft.com/en-us/azure/azure-sql-edge/disconnected-deployment#connect-from-outside-the-container)
 
 ## Let's remove your container
 
