@@ -26,13 +26,13 @@ This workshop is made of a collection of practical examples aimed to provide you
 
 ## Requirements
 
-* You should previous register your docker hub account at [Signup](https://hub.docker.com/signup/))
-* Docker Desktop installed on your machine [Get_Docker](https://docs.docker.com/get-docker/))
-* Docker Playground access with your docker hub account [Play_with_Docker](https://labs.play-with-docker.com/))
+* You should previous register your docker hub account at [Signup](https://hub.docker.com/signup/)
+* Docker Desktop installed on your machine [Get_Docker](https://docs.docker.com/get-docker/)
+* Docker Playground access with your docker hub account [Play_with_Docker](https://labs.play-with-docker.com/)
 * Validate Docker CLI execution
-* Validate Docker Compose execution [Reference](https://docs.docker.com/compose/install/))
+* Validate Docker Compose execution [Reference](https://docs.docker.com/compose/install/)
 * Basic proficiency with command-line tools and macOS/Linux operating system environments.
-* The Docker CLI (you can find the usage instructions [Reference](https://docs.docker.com/engine/reference/commandline/cli/))
+* The Docker CLI (you can find the usage instructions [Reference](https://docs.docker.com/engine/reference/commandline/cli/)
 * To save time, please download Docker and validate all access required **before** the workshop.
 
   ```bash
