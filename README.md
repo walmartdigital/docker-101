@@ -42,4 +42,4 @@ This workshop is made of a collection of practical examples aimed to provide you
 
 ## Presentation
 
-* [Slides]
+* [Slides](https://github.com/walmartdigital/docker-101/blob/master/img/Docker%20Workshop.pdf)
