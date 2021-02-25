@@ -185,7 +185,13 @@ To Understand what's a Dockerfile remember to review the [Slide] ()
         #
         # We suggest using the major.minor tag, not major.minor.patch, since you can be exposed to security vulnerabilities 
         FROM alpine:latest #Use official certified images or tested images avoid to let loose security constraints and keep it secure
-
+        # Declare your The WORKDIR directive in Dockerfile defines the working directory for the rest of the instructions in the Dockerfile
+        WORKDIR /myapp
+        RUN echo "Welcome to Docker Labs" > opt.txt
+        WORKDIR folder1
+        RUN echo "Welcome to Docker Labs" > folder1.txt
+        WORKDIR folder2
+        RUN echo "Welcome to Docker Labs" > folder2.txt
         # Important to establish a maintainer information with the creator or team creator in order to keep the tracking of releases 
         LABEL maintainer=<Infinitus-tribe-email>
         LABEL version="1.0"
@@ -241,12 +247,14 @@ To Understand what's a Dockerfile remember to review the [Slide] ()
         <Paste the Dockerfile refered before here and Save your changes>
 ```
 
-* Important change the user name to be assigned to execute the container [Thisline] 
+* Important change the user name to be assigned to execute the container **This lines** 
 
 ```
         RUN addgroup -g 10001 -S <YOURNONROOTUSER> && adduser -u 10000 -S -G <YOURNONROOTUSER> -h /home/nonroot nonroot
         ## This one too.
         USER <YOURNONROOTUSER>
+        LABEL maintainer=<Infinitus-tribe-email>
+        LABEL version="1.0"
 ```
 
 * Now let's build an image with this Dockerfile
