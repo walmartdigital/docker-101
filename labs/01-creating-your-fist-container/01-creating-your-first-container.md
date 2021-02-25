@@ -4,7 +4,7 @@ In this lab, you will run your first Docker container.
 
 ## Prerequisites
 
-To complete Lab 01: You must have access to a docker client, either on localhost, use a terminal iTerm2 or be using Play with Docker for example.
+To complete Lab 01: You must have access to a docker client, either on localhost, use a ***terminal iTerm2 or be using Play with Docker*** for example.
 
 ## Duration
 
