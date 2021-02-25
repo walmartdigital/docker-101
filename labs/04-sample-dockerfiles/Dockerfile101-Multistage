@@ -25,3 +25,4 @@ COPY ./docker docker/
 ENV JAVA_OPTS -Xms256m -Xmx512m --illegal-access=deny
 EXPOSE 8080
 ENTRYPOINT ["./docker/entrypoint.sh"]
+
