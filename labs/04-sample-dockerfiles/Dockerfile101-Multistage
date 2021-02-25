@@ -1,0 +1,27 @@
+FROM gradle:5.6.2-jdk11 as builder
+WORKDIR /app
+
+RUN apk add ca-certificates
+
+# Consul
+ARG CONSUL_TEMPLATE_VERSION=0.22.0
+RUN wget "https://releases.hashicorp.com/consul-template/${CONSUL_TEMPLATE_VERSION}/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.tgz"
+RUN tar zxfv consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.tgz
+
+# Vault
+ARG VAULT_VERSION=1.4.7
+RUN wget "https://releases.hashicorp.com/consul-template/${CONSUL_TEMPLATE_VERSION}/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.tgz"
+RUN unzip vault_${VAULT_VERSION}_linux_amd64.zip
+
+# Build the app
+COPY . .
+RUN ./gradlew build -x test
+FROM openjdk:11.0-jre-slim
+WORKDIR /opt
+# copy all the app artefacts
+COPY --from=builder /app/build/libs/front-app.jar app.jar
+COPY --from=builder /app/consul-template .
+COPY ./docker docker/
+ENV JAVA_OPTS -Xms256m -Xmx512m --illegal-access=deny
+EXPOSE 8080
+ENTRYPOINT ["./docker/entrypoint.sh"]

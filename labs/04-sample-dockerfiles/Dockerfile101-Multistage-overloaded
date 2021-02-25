@@ -1,0 +1,28 @@
+# Stage 1
+FROM node:10-alpine as node
+WORKDIR /app
+RUN apk add ca-certificates
+
+# Consul
+ARG CONSUL_TEMPLATE_VERSION=0.22.0
+RUN wget "https://releases.hashicorp.com/consul-template/${CONSUL_TEMPLATE_VERSION}/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.tgz"
+RUN tar zxfv consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.tgz
+
+# Vault
+ARG VAULT_VERSION=1.4.7
+RUN wget "https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip"
+RUN unzip vault_${VAULT_VERSION}_linux_amd64.zip
+
+
+COPY . .
+RUN npx npm-force-resolutions
+RUN npm install -g typescript
+RUN npm link typescript
+RUN npm install
+RUN npm run build
+RUN npm audit
+
+# stage 2
+FROM nginx:alpine
+COPY --from=node /app/dist/front-app /usr/share/nginx/html
+EXPOSE 80
