@@ -11,6 +11,14 @@ Before attempting to clone repo, be sure your host machine meets the prerequisit
 * Check the versions of Docker Engine,Compose,and Machine [Docker Getting Started](http://docs.docker.oeynet.com/docker-for-mac/)
 * curl
 
+## Duration
+
+|Component       |Timing            |
+|----------------|------------------|
+|Basics          |3 minutes         |
+|Prerequisites   |5 minutes         |
+|Lab             |5 minutes         |
+
 ## Docker Getting Started
 ```
     docker --version

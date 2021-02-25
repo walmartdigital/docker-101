@@ -3,7 +3,16 @@
 In this lab, you will run your first Docker container.
 
 ## Prerequisites
+
 To complete Lab 01: You must have access to a docker client, either on localhost, use a terminal iTerm2 or be using Play with Docker for example.
+
+## Duration
+
+|Component       |Timing            |
+|----------------|------------------|
+|Overview        |1 minutes         |
+|Prerequisites   |1 minutes         |
+|Lab             |15 minutes        |
 
 ## Get Started
 
@@ -166,7 +175,7 @@ To complete Lab 01: You must have access to a docker client, either on localhost
 * Since we are using bash and want to interact with this container from our terminal, use -it flags to run using interactive mode while allocating a psuedo-terminal.
 
     ```
-    docker container exec -it 21827b06087e bash or **docker run exec -it 21827b06087e**
+    docker container exec -it 21827b06087e bash or **docker run exec -it 21827b06087e -- sh**
     root@21827b06087e:/# 
     ```
 
